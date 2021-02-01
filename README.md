@@ -42,3 +42,5 @@ when credits reach 0. Choose to play again and or submit your score!
 #### Version
 
 -1.0.0
+
+![Instructions](/src/images/InstructionGuide.png)
