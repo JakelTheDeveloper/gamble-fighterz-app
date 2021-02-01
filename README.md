@@ -47,7 +47,7 @@ when credits reach 0. Choose to play again and or submit your score!
 
 ![Instructions](/src/images/InstructionGuide.png)
 
-0. Mute - Default (Keep muted on mobile)
+0. Mute - Default (May have to keep muted on some mobile device browsers.)
 1. Slot Holder for Icon 1.
 2. Slot Holder for Icon 2.
 3. Slot Holder for Icon 3.
