@@ -49,20 +49,25 @@ when credits reach 0. Choose to play again and or submit your score!
 
 0. Mute - Default (Keep muted on mobile)
 1. Slot Holder for Icon 1.
-
-                            <li></li>
-                            <li>Slot Holder for Icon 2.</li>
-                            <li>Slot Holder for Icon 3.</li>
-                            <li>High Score is shown here,<br /> when a level is complete,<br />
-                                or game is over, your highscore<br /> will be calculated.
-                            </li>
-                            <li>Credits are shown here.<br /> You will start the game with<br />
-                                100 credits. After every level complete,<br /> you will gain
-                                extra credits.
-                            </li>
-                            <li>Current Bet is shown here.<br /> You can set a maximum <br />of 3 credits
-                                per bet. Score Points <br /> will be multiplied by this number.
-                            </li>
-                            <li>Score Table Button. Click this button<br /> to see how many points each
-                                slot icon is worth.
-                            </li>
+2. Slot Holder for Icon 2.
+3. Slot Holder for Icon 3.
+4. High Score is shown here, when a level is complete,
+or game is over, your highscore will be calculated.
+5. Credits are shown here. You will start the game with
+100 credits. After every level complete,you will gain
+extra credits.
+6. Current Bet is shown here. You can set a maximum of 3 credits
+per bet. Score Points will be multiplied by this number.
+7. Score Table Button. Click this button to see how many points each
+slot icon is worth.
+8. Bet 1 allots 1 credit to the bet,
+Bet Max allots 3 credits to the bet.
+9. Spin Button. Press this button once you've placed your bet.
+10. Current Score is shown here. Points will tally up as each subsequent slot  wheel stops.
+11. Current Level is shown here. When you reach the required points(12),
+you will progress to the next level against the next Gamble Bully.
+12. Required Points are shown here. Once you reach this number, 
+you will progress to the next level.
+13. Current Character Profile Picture and name.
+14. Current Bully Profile Picture and name.
+15. Swich Button. Use this button to switch players.
