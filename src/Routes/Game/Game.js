@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
-import Controller from '../Components/Controller/Controller'
-import Error from '../Components/Error/Error'
-import HighScoreSubmitter from '../Components/HighScoreSubmitter/HighScoreSubmitter'
-import Profiles from '../Components/Profiles/Profiles'
-import KK from '../images/KK.png'
-import Slotz from '../images/Slotz.png'
-import PigBankz from '../images/PigBankz.png'
-import BullDawg from '../images/BullDawg.png'
-import GamBot from '../images/GamBot.png'
-import LoanShark from '../images/LoanShark.png'
-import Vector from '../images/Vector.png'
-import Lucky from '../images/Lucky.png'
-import SlotsHolder from '../Components/SlotsHolder/SlotsHolder'
+import Controller from '../../Components/Controller/Controller'
+import Error from '../../Components/Error/Error'
+import HighScoreSubmitter from '../../Components/HighScoreSubmitter/HighScoreSubmitter'
+import Profiles from '../../Components/Profiles/Profiles'
+import KK from '../../images/KK.png'
+import Slotz from '../../images/Slotz.png'
+import PigBankz from '../../images/PigBankz.png'
+import BullDawg from '../../images/BullDawg.png'
+import GamBot from '../../images/GamBot.png'
+import LoanShark from '../../images/LoanShark.png'
+import Vector from '../../images/Vector.png'
+import Lucky from '../../images/Lucky.png'
+import SlotsHolder from '../../Components/SlotsHolder/SlotsHolder'
 import './Game.css'
-import SoundOBJ from '../Helpers/AudioHelper'
-import ScoreTable from '../Components/ScoreTable/ScoreTable'
+import SoundOBJ from '../../Helpers/AudioHelper'
+import ScoreTable from '../../Components/ScoreTable/ScoreTable'
 
 class Game extends Component {
     constructor(props) {
@@ -149,14 +149,19 @@ class Game extends Component {
     }
     calculateCredBonus() {
         let { currLevel, credits } = this.state
-        if (currLevel <= 3 && credits <= 50) {
-            return 100
-        } else if (currLevel <= 3 && credits > 50) {
+        if(currLevel <=3 && credits <=30){
+            return 75
+        }else
+        if (currLevel <= 3 && credits <= 50 && credits > 30 ) {
+            return 65
+        } else if (currLevel <= 3 && credits > 50 && credits <=70) {
             return 50
+        }else if(currLevel <= 3 && credits > 70){
+            return 25
         } else if (currLevel > 3 && credits <= 50) {
-            return 120
+            return 80
         } else if (currLevel > 3 && credits > 50) {
-            return 160
+            return 60
         }
     }
     showTable = () => {

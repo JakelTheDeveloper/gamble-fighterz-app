@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import './App.css';
-import Game from '../Game/Game';
+import Game from '../Routes/Game/Game';
 import Header from '../Header/Header';
 import HighScores from '../Routes/HighScores/HighScores';
 import LandingPage from '../Routes/LandingPage/LandingPage';
