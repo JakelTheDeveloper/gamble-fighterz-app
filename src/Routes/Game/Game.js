@@ -150,18 +150,18 @@ class Game extends Component {
     calculateCredBonus() {
         let { currLevel, credits } = this.state
         if(currLevel <=3 && credits <=30){
-            return 75
+            return 110
         }else
         if (currLevel <= 3 && credits <= 50 && credits > 30 ) {
-            return 65
+            return 85
         } else if (currLevel <= 3 && credits > 50 && credits <=70) {
-            return 50
+            return 70
         }else if(currLevel <= 3 && credits > 70){
-            return 25
-        } else if (currLevel > 3 && credits <= 50) {
             return 80
+        } else if (currLevel > 3 && credits <= 50) {
+            return 180
         } else if (currLevel > 3 && credits > 50) {
-            return 60
+            return 140
         }
     }
     showTable = () => {
