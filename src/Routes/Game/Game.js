@@ -289,7 +289,7 @@ class Game extends Component {
             currScore: currScore = 0, currLevel: currLevel = 1, rqScore:rqScore = 10000, currEnemy:currEnemy = Slotz, credits: credits = 100, highScore: highScore = 0,
             gameOver: gameOver = false
         })
-        this.handleParams(currScore,currLevel,currEnemy,highScore,credits,gameOver)
+        this.handleParams(currScore,currLevel,currEnemy,highScore,rqScore,credits,gameOver)
     }
     handlePlayerSwitch=()=>{
         let {currPlayer} = this.state

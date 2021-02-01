@@ -29,7 +29,7 @@ class LandingPage extends Component {
                     <div className="infoLeft">
                         <h1>Part 1</h1>
                         <ol type = "1">
-                            <li value = "0">Mute - Default (May Have To Keep muted on some mobile devices)</li>
+                            <li value = "0">Mute - Default (May Have To<br/>Keep muted on some<br/> mobile devices)</li>
                             <li>Slot Holder for Icon 1.</li>
                             <li>Slot Holder for Icon 2.</li>
                             <li>Slot Holder for Icon 3.</li>
