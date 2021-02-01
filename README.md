@@ -7,7 +7,7 @@ bet up to a maximum of 3 credits per bet. After betting, press the spin button a
 User will progress through levels when they reach the required score for that level. Game is over
 when credits reach 0. Choose to play again and or submit your score!
 
-#### *[LIVE APP](https://theescaperoom.vercel.app/)*
+#### *[LIVE APP](https://gamble-fighterz.vercel.app/)*
 
 #### *[BACKEND REPO](https://github.com/JakelTheDeveloper/gamble-fighterz-server)*
 
