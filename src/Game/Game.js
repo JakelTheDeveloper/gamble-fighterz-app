@@ -21,7 +21,7 @@ class Game extends Component {
         super(props)
         this.state = {
             currLevel: 1,
-            currPlayer:Lucky,
+            currPlayer:KK,
             currEnemy: null,
             gameStarted: false,
             ptsToAdd: 0,
