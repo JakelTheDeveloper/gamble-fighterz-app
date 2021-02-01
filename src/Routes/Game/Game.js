@@ -284,9 +284,9 @@ class Game extends Component {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     }
     handleGameReset = () => {
-        let { currScore, currLevel,currEnemy, highScore, credits, gameOver} = this.state
+        let { currScore, currLevel,currEnemy, rqScore, highScore, credits, gameOver} = this.state
         this.setState({
-            currScore: currScore = 0, currLevel: currLevel = 1, currEnemy:currEnemy = Slotz, credits: credits = 100, highScore: highScore = 0,
+            currScore: currScore = 0, currLevel: currLevel = 1, rqScore:rqScore = 10000, currEnemy:currEnemy = Slotz, credits: credits = 100, highScore: highScore = 0,
             gameOver: gameOver = false
         })
         this.handleParams(currScore,currLevel,currEnemy,highScore,credits,gameOver)
