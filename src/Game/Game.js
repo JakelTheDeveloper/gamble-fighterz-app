@@ -356,7 +356,7 @@ class Game extends Component {
                 enemyName = {enemyName}
                 handleSwitch = {this.handlePlayerSwitch} />
 
-                {(this.state.gameOver ? <HighScoreSubmitter highScore={this.state.highScore} reset={this.handleGameReset} /> : null)}
+                {(this.state.gameOver ? <HighScoreSubmitter mute ={this.state.mute} highScore={this.state.highScore} reset={this.handleGameReset} /> : null)}
                 {(this.state.scoreTable ? <ScoreTable showTable={this.showTable} /> : null)}
                 {(!this.state.mute ? <button className="muteBtn" type="button" onClick={this.handleMute}>&#128266;</button>:
                 <button className="muteBtn" type="button" onClick={this.handleMute}>&#128264;</button>)}

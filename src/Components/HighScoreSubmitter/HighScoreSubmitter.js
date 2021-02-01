@@ -3,6 +3,7 @@ import config from '../../config'
 import './HighScoreSubmitterM.css'
 import './HighScoreSubmitterC.css'
 import Error from '../Error/Error'
+import SoundOBJ from '../../Helpers/AudioHelper'
 class HighScoreSubmitter extends Component {
     constructor(props){
         super(props)
@@ -26,9 +27,18 @@ class HighScoreSubmitter extends Component {
         e.preventDefault()
         if (this.state.username === undefined || this.state.username.length === 0) {
           this.setState({error:"Please enter a name!"})
+          if (!this.props.mute) {
+            SoundOBJ.errorSFX.play()
+        }
         }else if(this.state.username.length > 10 ){
+          if (!this.props.mute) {
+            SoundOBJ.errorSFX.play()
+        }
           this.setState({error:"Name must be 10 or less characters!"})
             } else {
+              if (!this.props.mute) {
+                SoundOBJ.combo01SFX.play()
+            }
               const url = `${config.URL}/api/scores`
               const options = {
                 method: 'POST',
@@ -47,16 +57,14 @@ class HighScoreSubmitter extends Component {
                   }
                   return res.json()
                 })
-                .then(score => {
-                  this.context.addScore(score)
-                  this.props.reset()
-                })
+                .then(this.props.reset())
                 .catch(err => this.setState({ error: err.message }))
             }
       }
     render() {
         return (
             <div className="submitScore">
+               <form onSubmit={this.handleSubmit}>
                 <h1>Submit Your HighScore</h1>
                 {(this.state.error ? <Error message={this.state.error} clearError={this.clearError} /> : null)}
                 <div>
@@ -67,9 +75,10 @@ class HighScoreSubmitter extends Component {
                     HighScore:<div style={{ color: "rgb(13, 182, 111)", marginTop: 10 }}>{this.props.highScore}</div>
                 </div>
                 <div className="submitBtnDiv">
-                    <button className="submitBtn" type="button">Submit</button>
+                    <button className="submitBtn" type="submit">Submit</button>
                     <button className="spinBtnA" type="button" onClick={this.props.reset}>Play Again</button>
                 </div>
+                </form>
             </div>
         )
     }

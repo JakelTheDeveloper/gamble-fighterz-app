@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import './App.css';
-import Game from './Game/Game';
-import Header from './Header/Header';
-import HighScores from './Routes/HighScores/HighScores';
-import LandingPage from './Routes/LandingPage/LandingPage';
+import Game from '../Game/Game';
+import Header from '../Header/Header';
+import HighScores from '../Routes/HighScores/HighScores';
+import LandingPage from '../Routes/LandingPage/LandingPage';
 
 class App extends Component {
   renderNavRoutes() {
-      return (
-        <Route path="/" render={(props) => (
-          <Header/>
-        )}
-        />
-      )
+    return (
+      <Route path="/" render={(props) => (
+        <Header />
+      )}
+      />
+    )
   }
-  renderMainRoutes(){
+  renderMainRoutes() {
     return (
       <>
         <Switch>
@@ -38,13 +38,13 @@ class App extends Component {
       </>
     )
   }
+  
   render() {
-
     return (
-      <div className="App">
-        <nav className='App_Nav'>{this.renderNavRoutes()}</nav>
-        <main className="App_main">{this.renderMainRoutes()}</main>
-      </div>
+        <div className="App">
+          <nav className='App_Nav'>{this.renderNavRoutes()}</nav>
+          <main className="App_main">{this.renderMainRoutes()}</main>
+        </div>
     )
   }
 }

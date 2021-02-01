@@ -14,7 +14,7 @@
     left: 20%;
     top: 40%;
     width: 60%;
-    height: 50%;
+    height: max-content;
     font-family: 'Turret Road', cursive;
     position: absolute;
     z-index: 2;
