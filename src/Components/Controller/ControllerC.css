@@ -1,0 +1,179 @@
+@media only screen and (min-width: 30.25em) {
+    .levelInfo {
+        border: solid 2px rgb(243, 69, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        height: max-content;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+    }
+    .controls {
+        border: solid 2px rgb(243, 69, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        height: max-content;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .currpts {
+        color: rgb(243, 69, 0);
+        font-weight: 600;
+        text-align: right;
+        font-size: 15px;
+        margin-left: 0px;
+        width: 10rem;
+        display: flex;
+        font-family: 'Turret Road', cursive;
+        
+    }
+    .currlvl {
+        color: rgb(243, 69, 0);
+        font-weight: 600;
+        text-align: right;
+        font-size: 15px;
+        margin-left: 0px;
+        width: 10rem;
+        display: flex;
+        font-family: 'Turret Road', cursive;
+    }
+    .rqpts {
+        color: rgb(243, 69, 0);
+        text-align: right;
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 0px;
+        width: 10rem;
+        display: flex;
+        font-family: 'Turret Road', cursive;
+    }
+    
+    #currpts {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #currlvl {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #rqpts {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .spinDiv {
+        text-align: right;
+        display: inline-flex;
+    }
+    .betDiv {
+        text-align: left;
+        display: inline-flex;
+    }
+    .muteDiv {
+        text-align: left;
+        margin-left: -5%;
+    }
+    .scoreTableBtn {
+        border: solid 2px rgb(11, 87, 97);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(95, 197, 228) 0, rgb(19, 127, 141));
+        color: rgb(0, 0, 0);
+        width: 65px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .muteBtn {
+        border: solid 2px rgb(11, 87, 97);
+        text-align: center; 
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(255, 255, 255) 0, rgb(59, 59, 59));
+        color: rgb(0, 0, 0);
+        left: 5%;
+        top: 2%;
+        width: 6%;
+        height: 4%;
+        position: absolute;
+        z-index: 3;
+        cursor: pointer; 
+    }
+    .betBtnA {
+        border: solid 2px rgb(0, 0, 0);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(230, 236, 234) 0, rgb(177, 184, 181));
+        color: rgb(0, 0, 0);
+        width: 65px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .betBtnI {
+        border: solid 2px rgb(1, 2, 1);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 5px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: rgb(182, 182, 182);
+        color: rgb(0, 0, 0);
+        width: 65px;
+        height: 50px;
+        cursor: pointer;
+    }
+    
+    .spinBtnA {
+        border: solid 2px rgb(11, 97, 57);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(95, 228, 188) 0, rgb(13, 182, 111));
+        color: rgb(0, 0, 0);
+        width: 65px;
+        height: 50px;
+        cursor: pointer;
+    }
+    .spinBtnI {
+        border: solid 2px rgb(5, 39, 23);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background-color:  rgb(5, 39, 23);
+        color: rgb(0, 0, 0);
+        width: 65px;
+        height: 50px;
+        cursor: pointer;
+    }
+}

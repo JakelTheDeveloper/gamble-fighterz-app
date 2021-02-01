@@ -1,0 +1,76 @@
+.slotsContainer {
+    border: solid 2px rgb(243, 69, 0);
+    border-radius: 5px;
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+}
+
+.slotBox {
+    border: solid 2px rgb(13, 182, 111);
+    width: 150px;
+    height: 160px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+}
+
+.info {
+    border: solid 2px rgb(243, 69, 0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    height: max-content;
+    column-count: 3;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#highscore {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#credits {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#bet {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.highscore {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    display: inline;
+    font-family: 'Turret Road', cursive;
+}
+
+.credits {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    display: inline;
+    font-family: 'Turret Road', cursive;
+}
+
+.bet {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    margin-left: 8px;
+    display: inline;
+    font-family: 'Turret Road', cursive;
+}
+
+

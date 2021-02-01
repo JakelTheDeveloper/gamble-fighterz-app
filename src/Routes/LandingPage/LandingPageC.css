@@ -1,0 +1,102 @@
+@media only screen and (min-width: 40.25em) {
+    .home {
+        border: solid 2px rgb(243, 49, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        border-radius: 30px;
+        color: rgb(243, 49, 0);
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    ol{
+        border: solid 2px rgb(243, 49, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        border-radius: 30px;
+        font-size: 30px;
+        display: inline-block;
+    }
+    li{
+        font-size: 34px;
+        text-align: left;
+        color: rgb(20,243,0);
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    ol li:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 5px;
+        background: #f00;
+    }
+}
+@media only screen and (min-width: 70.25em) {
+    .home {
+        border: solid 2px rgb(243, 49, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        border-radius: 30px;
+        color: rgb(243, 49, 0);
+        margin-top: 10px;
+        font-size: 30px;
+    }
+    .howToPlay {
+        border: solid 2px rgb(243, 49, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        border-radius: 30px;
+        height: max-content;
+        color: rgb(243, 49, 0);
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .infoLeft{
+        font-size: 18px;
+    }
+    .infoRight{
+        font-size: 18px; 
+    }
+    ol{
+        border: solid 2px rgb(243, 49, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        border-radius: 30px;
+        font-size: 30px;
+        display: inline-block;
+    }
+    li{
+        font-size: 30px;
+        text-align: left;
+        color: rgb(20,243,0);
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    ol li:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        margin: 5px;
+        background: #f00;
+    }
+
+    .HTP{
+        font-size: 30px;
+        padding:10px 0px 10px 0px;
+        color: rgb(243, 49, 0);
+        border:solid 2px rgb(243,49,0);
+        border-radius: 30px;
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    }
+    .mainInfo {
+        margin-top: 10px;
+    }
+    .instructGuide {
+        margin-top: 10px;
+        height:98%;
+        width:85%;
+    }
+}

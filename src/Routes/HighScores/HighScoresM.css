@@ -1,0 +1,37 @@
+.highScoreTable{
+    border:solid 2px rgb(243,49,0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    border-radius: 30px;
+    width:80%;
+    color: rgb(243, 49, 0);
+    margin-top: 10px;
+    height:500px;
+    overflow-y: scroll;
+
+}
+.scoreSpace{
+   display: flex;
+   justify-content: center;
+}
+.HSI{
+    width: 95%;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0, rgb(0, 3, 7));
+    border:solid 2px rgb(243,49,0);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+  }
+  .HSC{
+      display: flex;
+      justify-content: center;
+  }
+  .HSU{
+      margin-left: 5px;
+  }

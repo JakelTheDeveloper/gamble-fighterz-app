@@ -1,0 +1,95 @@
+.title_header {
+  color: rgb(243, 49, 0);
+  margin-top: 5px;
+  text-align: center;
+  height: 0px;
+  font-family: 'Turret Road', cursive;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.nav_header .ul_header .li_header {
+  border-radius: 20px;
+  padding: 5px 5px;
+  margin-right: 10px;
+  margin: 0 10px 0 0;
+  font-size: 15px;
+  font-family: 'Turret Road', cursive;
+  text-align: center;
+}
+
+.li_header {
+  font-size: 10px;
+}
+
+.nav_header .ul_header .li_header_ {
+  border-radius: 20px;
+  padding: 5px 5px;
+  margin-right: 10px;
+  margin: 0 10px 0 0;
+  font-size: 14px;
+  font-family: 'Turret Road', cursive;
+  text-align: center;
+}
+
+.li_header_ {
+  font-size: 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+a {
+  color:  rgb(243, 49, 0);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 40.25em) {
+  .nav_header .ul_header .li_header {
+    color:  rgb(243, 49, 0);
+    border-radius: 20px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    margin: 0 10px 0 0;
+    font-family: 'Turret Road', cursive;
+    font-size: 30px;
+    text-align: center;
+  }
+  .nav_header .ul_header .li_header_ {
+    color: rgb(243, 49, 0);
+    border-radius: 20px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    margin: 0 10px 0 0;
+    font-family: 'Turret Road', cursive;
+    font-size: 18px;
+    text-align: center;
+  }
+}

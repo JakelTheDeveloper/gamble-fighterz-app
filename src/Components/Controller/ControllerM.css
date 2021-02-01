@@ -1,0 +1,176 @@
+.levelInfo {
+    border: solid 2px rgb(243, 69, 0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    height: max-content;
+    column-count: 3;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.controls {
+    border: solid 2px rgb(243, 69, 0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+.muteBtn {
+        text-align: center; 
+        border: solid 2px rgb(11, 87, 97);
+        border-radius: 10px;
+        font-size: 10px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(255, 255, 255) 0, rgb(59, 59, 59));
+        color: rgb(255, 255, 255);
+        left: 5%;
+        top: 2%;
+        width: 10%;
+        height: 5%;
+        position: absolute;
+        z-index: 3;
+        cursor: pointer; 
+}
+.scoreTableBtn {
+    border: solid 2px rgb(11, 87, 97);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: 'Turret Road', cursive;
+    font-size: 12px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, rgb(95, 197, 228) 0, rgb(19, 127, 141));
+    color: rgb(0, 0, 0);
+    width: 65px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.betBtnA {
+    border: solid 2px rgb(1, 2, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, rgb(230, 236, 234) 0, rgb(177, 184, 181));
+    color: rgb(0, 0, 0);
+    width: 65px;
+    height: 50px;
+}
+
+.betBtnI {
+    border: solid 2px rgb(1, 2, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(182, 182, 182);
+    color: rgb(0, 0, 0);
+    width: 65px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.spinBtnA {
+    border: solid 2px rgb(11, 97, 57);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, rgb(95, 228, 188) 0, rgb(13, 182, 111));
+    color: rgb(0, 0, 0);
+    width: 65px;
+    height: 50px;
+    cursor: pointer;
+}
+.spinBtnI {
+    border: solid 2px rgb(5, 39, 23);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(5, 39, 23);
+    color: rgb(0, 0, 0);
+    width: 65px;
+    height: 50px;
+    cursor: pointer;
+}
+.spinDiv {
+    text-align: right;
+}
+
+.submitBtnDiv {
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.betDiv {
+    text-align: left;
+    display: inline-flex;
+}
+
+#currpts {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#currlvl {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#rqpts {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.currpts {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: -16px;
+    font-family: 'Turret Road', cursive;
+}
+
+.currlvl {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: -16px;
+    font-family: 'Turret Road', cursive;
+}
+
+.rqpts {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: -16px;
+    font-family: 'Turret Road', cursive;
+}

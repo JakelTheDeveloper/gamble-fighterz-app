@@ -1,0 +1,53 @@
+.error{
+    border: solid 2px  rgb(243, 0, 0);
+    color:rgb(243, 69, 0);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Turret Road', cursive;
+}
+.message{
+    margin-top: 10px;
+}
+.closeErr{
+        border:solid 2px rgb(97, 11, 11);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: rgb(182, 24, 13);
+        color: rgb(255, 255, 255);
+        width:40px;
+        height:30px;
+        cursor: pointer;
+}
+
+@media only screen and (min-width: 30.25em) {
+    .error{
+        border: solid 2px  rgb(243, 0, 0);
+        color:rgb(243, 69, 0);
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: 'Turret Road', cursive;
+    }
+    .message{
+        margin-top: 10px;
+    }
+    .closeErr{
+        border:solid 2px rgb(97, 11, 11);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: rgb(182, 24, 13);
+        color: rgb(255, 255, 255);
+        width:25px;
+        height:25px;
+        cursor: pointer;
+}
+}

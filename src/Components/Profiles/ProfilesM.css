@@ -1,0 +1,67 @@
+
+.profileContainer {
+    border: solid 2px rgb(243, 69, 0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, rgb(221, 100, 19) 0, rgb(255, 240, 37));
+    border: solid 4px rgb(13, 182, 111);
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.nameDisplay{
+    border: solid 2px rgb(243, 69, 0);
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    border-radius: 30px;
+    color:white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.switchBtn{
+        /* border: solid 2px rgb(11, 87, 97);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 18px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(95, 197, 228) 0, rgb(19, 127, 141));
+        color: rgb(0, 0, 0);
+        text-align: center;
+        width: 5%;
+        height: 30px;
+        cursor: pointer; */
+        opacity: 0.8; 
+  filter: alpha(opacity=80);
+
+  transform: translate(-50%, -10%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 2.5vw;
+  padding: 1% 5%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 160%;
+}

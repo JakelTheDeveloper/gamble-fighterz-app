@@ -1,0 +1,56 @@
+.submitScore {
+    color: rgb(243, 69, 0);
+    font-weight: bolder;
+    border-style: solid;
+    font-size: 18px;
+    border: solid 2px rgb(243, 69, 0);
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    left: 20%;
+    top: 40%;
+    width: 60%;
+    height: 50%;
+    font-family: 'Turret Road', cursive;
+    position: absolute;
+    z-index: 2;
+}
+
+#username {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 60%;
+    text-align: center;
+}
+
+.username {
+    color: rgb(243, 69, 0);
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: 'Turret Road', cursive;
+}
+
+.submitBtn {
+    border: solid 2px rgb(11, 97, 57);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: 'Turret Road', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(to bottom, rgb(95, 228, 188) 0, rgb(13, 182, 111));
+    color: rgb(0, 0, 0);
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+h1{
+    font-size: 18px;
+}

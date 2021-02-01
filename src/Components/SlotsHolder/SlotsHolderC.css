@@ -1,0 +1,82 @@
+@media only screen and (min-width: 35.25em) {
+    .slotsContainer {
+        border: solid 2px rgb(243, 69, 0);
+        border-radius: 5px;
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        display: flex;
+        justify-content: space-evenly;
+        height: 180px;
+        z-index: 1;
+    }
+    .slotsContainer>div {
+         margin-top:10px;
+    margin-bottom:0px;
+    margin-left:-20%;
+    margin-right:-20%;
+        /* margin:1vw; */
+     }
+    .slotBox {
+        border: solid 2px rgb(13, 182, 111);
+        width: 150px;
+        height: 160px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+    }
+    .info {
+        border: solid 2px rgb(243, 69, 0);
+        background: linear-gradient(to bottom, rgb(17, 17, 17) 0, rgb(0, 3, 7));
+        height: max-content;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .highscore {
+        color: rgb(243, 69, 0);
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 0px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Turret Road', cursive;
+    }
+    .credits {
+        color: rgb(243, 69, 0);
+        font-weight: 600;
+        font-size: 15px;
+        margin-left: 0px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Turret Road', cursive;
+    }
+    .bet {
+        color: rgb(243, 69, 0);
+        font-weight: 600;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left: 0px;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Turret Road', cursive;
+    }
+    #highscore {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #credits {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #bet {
+        color: rgb(243, 69, 0);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
