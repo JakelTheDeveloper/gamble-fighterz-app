@@ -15,13 +15,14 @@ import SlotsHolder from '../../Components/SlotsHolder/SlotsHolder'
 import './Game.css'
 import SoundOBJ from '../../Helpers/AudioHelper'
 import ScoreTable from '../../Components/ScoreTable/ScoreTable'
+import TokenService from '../../services/token-service'
 
 class Game extends Component {
     constructor(props) {
         super(props)
         this.state = {
             currLevel: 1,
-            currPlayer:KK,
+            currPlayer: KK,
             currEnemy: null,
             gameStarted: false,
             ptsToAdd: 0,
@@ -44,7 +45,6 @@ class Game extends Component {
             mute: true,
             error: null
         }
-
     }
     clearError = () => {
         this.setState({
@@ -52,7 +52,7 @@ class Game extends Component {
         })
     }
     handleMute = () => {
-        let {mute} = this.state
+        let { mute } = this.state
         this.setState({
             mute: mute = !mute
         })
@@ -60,17 +60,41 @@ class Game extends Component {
     handleParams(params) {
         return
     }
+    setData = () => {
+        let { highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy } = this.state
+        this.setState({
+            highScore: highScore = parseInt(window.localStorage.highScore),
+            credits: credits = parseInt(window.localStorage.credits),
+            currScore: currScore = parseInt(window.localStorage.score), 
+            currLevel: currLevel = parseInt(window.localStorage.level),
+            rqScore: rqScore = parseInt(window.localStorage.rqScore), 
+            currPlayer: currPlayer = window.localStorage.player,
+            currEnemy: currEnemy = window.localStorage.enemy,
+        })
+        this.handleParams(highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy)
+    }
     componentDidMount() {
-        let { generate1, generate2, generate3, rqScore, currEnemy } = this.state
-        if (this.state.currLevel === 1) {
-            this.setState({ rqScore: rqScore = 10000, currEnemy: currEnemy = Slotz })
-            this.handleParams(currEnemy)
+        console.log(localStorage)
+        let { rqScore, currEnemy, generate1, generate2, generate3,
+        } = this.state
+
+        if (TokenService.hasData()) {
+            this.setData()
+        } else {
+            if (this.state.currLevel === 1) {
+                this.setState({ rqScore: rqScore = 10000, currEnemy: currEnemy = Slotz })
+                this.handleParams(currEnemy)
+            }
         }
         let g1
         let g2
         let g3
         this.intervalId = setInterval(() => {
+            if(this.state.ptsToAdd > 0){
             this.scoreTally()
+            }
             g1 = this.getRandomNum(1, 71)
             g2 = this.getRandomNum(1, 71)
             g3 = this.getRandomNum(1, 71)
@@ -80,18 +104,44 @@ class Game extends Component {
             }
         }, 30)
     }
+
     componentDidUpdate() {
-        let { currScore, rqScore, currLevel, currEnemy, highScore, credits, gameOver, bet, spin } = this.state
+        let { currScore, rqScore, ptsToAdd, multiplier, currPlayer, currLevel, currEnemy, highScore, credits, gameOver, bet, spin, cycle } = this.state
+        let storageData = {
+            spin, gameOver, cycle,
+            highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy
+        }
         if (this.state.currLevel === 2 && rqScore === 10000) {
             this.setState({ rqScore: rqScore = 25000, currEnemy: currEnemy = PigBankz })
+            storageData.rqScore = 25000
+            storageData.enemy = PigBankz
+            storageData.level = 2
+            TokenService.saveData(storageData)
         } else if (this.state.currLevel === 3 && rqScore === 25000) {
             this.setState({ rqScore: rqScore = 40000, currEnemy: currEnemy = BullDawg })
+            storageData.rqScore = 40000
+            storageData.enemy = BullDawg
+            storageData.level = 3
+            TokenService.saveData(storageData)
         } else if (this.state.currLevel === 4 && rqScore === 40000) {
             this.setState({ rqScore: rqScore = 55000, currEnemy: currEnemy = GamBot })
+            storageData.rqScore = 55000
+            storageData.enemy = GamBot
+            storageData.level = 4
+            TokenService.saveData(storageData)
         } else if (this.state.currLevel === 5 && rqScore === 55000) {
             this.setState({ rqScore: rqScore = 75000, currEnemy: currEnemy = LoanShark })
+            storageData.rqScore = 75000
+            storageData.enemy = LoanShark
+            storageData.level = 5
+            TokenService.saveData(storageData)
         } else if (this.state.currLevel === 6 && rqScore === 75000) {
-            this.setState({ rqScore: rqScore = 1000000, currEnemy:currEnemy = Vector })
+            this.setState({ rqScore: rqScore = 1000000, currEnemy: currEnemy = Vector })
+            storageData.rqScore = 1000000
+            storageData.enemy = Vector
+            storageData.level = 6
+            TokenService.saveData(storageData)
         }
         this.handleParams(currEnemy)
         let newHighAdd = currScore
@@ -112,8 +162,9 @@ class Game extends Component {
     getRandomNum(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
+
     setPtsToAdd = (num) => {
-        let { ptsToAdd, multiplier } = this.state
+        let { multiplier, ptsToAdd, } = this.state
         let bonus = 8000
         let convert = num * multiplier
 
@@ -123,25 +174,40 @@ class Game extends Component {
         this.setState({ ptsToAdd: ptsToAdd += convert })
         this.handleParams(ptsToAdd)
     }
+
     scoreTally = () => {
-        let { ptsToAdd, currScore } = this.state
-        if (this.state.ptsToAdd > 0 && this.state.ptsToAdd < 100) {
+        let { highScore, credits, bet, spin, gameOver, cycle, currScore, currLevel, rqScore,
+            multiplier, currPlayer, currEnemy, ptsToAdd, } = this.state
+        let storageData = {
+            spin, gameOver, cycle,
+            highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy
+        }
+        if (ptsToAdd > 0 && ptsToAdd < 100) {
             this.setState({ ptsToAdd: ptsToAdd -= 1, currScore: currScore += 1 })
+            storageData.currScore += 1
+            TokenService.saveData(storageData)
             if (!this.state.mute) {
                 SoundOBJ.counterSFX.play()
             }
         } else if (this.state.ptsToAdd >= 100 && this.state.ptsToAdd < 1000) {
             this.setState({ ptsToAdd: ptsToAdd -= 10, currScore: currScore += 10 })
+            storageData.currScore += 1
+            TokenService.saveData(storageData)
             if (!this.state.mute) {
                 SoundOBJ.counterSFX.play()
             }
         } else if (this.state.ptsToAdd >= 1000 && this.state.ptsToAdd < 10000) {
             this.setState({ ptsToAdd: ptsToAdd -= 100, currScore: currScore += 100 })
+            storageData.currScore += 1
+            TokenService.saveData(storageData)
             if (!this.state.mute) {
                 SoundOBJ.counterSFX.play()
             }
         } else if (this.state.ptsToAdd >= 10000) {
             this.setState({ ptsToAdd: ptsToAdd -= 1000, currScore: currScore += 1000 })
+            storageData.currScore += 1
+            TokenService.saveData(storageData)
             if (!this.state.mute) {
                 SoundOBJ.counterSFX.play()
             }
@@ -149,20 +215,20 @@ class Game extends Component {
     }
     calculateCredBonus() {
         let { currLevel, credits } = this.state
-        if(currLevel <=3 && credits <=30){
+        if (currLevel <= 3 && credits <= 30) {
             return 110
-        }else
-        if (currLevel <= 3 && credits <= 50 && credits > 30 ) {
-            return 85
-        } else if (currLevel <= 3 && credits > 50 && credits <=70) {
-            return 70
-        }else if(currLevel <= 3 && credits > 70){
-            return 80
-        } else if (currLevel > 3 && credits <= 50) {
-            return 180
-        } else if (currLevel > 3 && credits > 50) {
-            return 140
-        }
+        } else
+            if (currLevel <= 3 && credits <= 50 && credits > 30) {
+                return 85
+            } else if (currLevel <= 3 && credits > 50 && credits <= 70) {
+                return 70
+            } else if (currLevel <= 3 && credits > 70) {
+                return 80
+            } else if (currLevel > 3 && credits <= 50) {
+                return 180
+            } else if (currLevel > 3 && credits > 50) {
+                return 140
+            }
     }
     showTable = () => {
         let { scoreTable } = this.state
@@ -223,7 +289,14 @@ class Game extends Component {
 
     }
     handleSpin = () => {
-        let { cycle, spin, bet, multiplier, error, generate1, generate2, generate3, g1, g2, g3 } = this.state
+        let { highScore, credits, bet, spin, gameOver, cycle, currScore, currLevel, rqScore,
+            multiplier, currPlayer, currEnemy, ptsToAdd, error,
+            generate1, generate2, generate3, g1, g2, g3 } = this.state
+        let storageData = {
+            spin, gameOver, cycle,
+            highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy
+        }
         let gen1 = this.convertNumToIcon(generate1)
         let gen2 = this.convertNumToIcon(generate2)
         let gen3 = this.convertNumToIcon(generate3)
@@ -233,6 +306,7 @@ class Game extends Component {
                 cycle: cycle = !cycle, spin: spin = !spin, bet: bet = 0, multiplier: multiplier = multi,
                 g1: g1 = gen1, g2: g2 = gen2, g3: g3 = gen3
             })
+            TokenService.saveData(storageData)
             if (!this.state.mute) {
                 SoundOBJ.startSpinSFX.play()
             }
@@ -247,7 +321,7 @@ class Game extends Component {
         this.handleParams(g1, g2, g3, bet, multiplier, error)
     }
     handleBet = (num) => {
-        let { bet, credits, spin, error } = this.state
+        let { credits, bet, spin, error } = this.state
         let currCreds = this.state.credits + bet
         if (bet < 3 && num === 1 && credits >= num && !spin) {
             if (!this.state.mute) {
@@ -281,43 +355,61 @@ class Game extends Component {
         this.setState({ cycle: cycle = !cycle, spin: spin = !spin })
     }
     numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        if (x !== undefined) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        } else {
+            return 0
+        }
     }
     handleGameReset = () => {
-        let { currScore, currLevel,currEnemy, rqScore, highScore, credits, gameOver} = this.state
+        let { highScore, credits, currScore, currLevel, rqScore, currEnemy, gameOver } = this.state
         this.setState({
-            currScore: currScore = 0, currLevel: currLevel = 1, rqScore:rqScore = 10000, currEnemy:currEnemy = Slotz, credits: credits = 100, highScore: highScore = 0,
+            currScore: currScore = 0, currLevel: currLevel = 1, rqScore: rqScore = 10000, currEnemy: currEnemy = Slotz, credits: credits = 100, highScore: highScore = 0,
             gameOver: gameOver = false
         })
-        this.handleParams(currScore,currLevel,currEnemy,highScore,rqScore,credits,gameOver)
+        window.localStorage.clear()
+        this.handleParams(currScore, currLevel, currEnemy, highScore, rqScore, credits, gameOver)
     }
-    handlePlayerSwitch=()=>{
-        let {currPlayer} = this.state
-        if(currPlayer === KK){
-            this.setState({currPlayer:currPlayer = Lucky})
-        }else{
-            this.setState({currPlayer:currPlayer = KK})
+    handlePlayerSwitch = () => {
+        let { highScore, credits, bet, spin, gameOver, cycle, currScore, currLevel, rqScore,
+            multiplier, currPlayer, currEnemy, ptsToAdd } = this.state
+        let storageData = {
+            spin, gameOver, cycle,
+            highScore, credits, bet, currScore, currLevel, rqScore,
+            ptsToAdd, multiplier, currPlayer, currEnemy
         }
+        if (currPlayer === KK) {
+            this.setState({ currPlayer: currPlayer = Lucky })
+            storageData.currPlayer = Lucky
+            TokenService.saveData(storageData)
+            console.log(localStorage.player)
+        } else {
+            this.setState({ currPlayer: currPlayer = KK })
+            storageData.currPlayer = KK
+            TokenService.saveData(storageData)
+            console.log(localStorage.player)
+        }
+      
     }
     render() {
         let playerName
         let enemyName
-        if(this.state.currPlayer === KK){
+        if (this.state.currPlayer === KK) {
             playerName = "KK"
-        }else if(this.state.currPlayer === Lucky){
+        } else if (this.state.currPlayer === Lucky) {
             playerName = "Lucky"
         }
-        if(this.state.currEnemy === Slotz){
+        if (this.state.currEnemy === Slotz) {
             enemyName = "Slotz"
-        }else if(this.state.currEnemy === PigBankz){
+        } else if (this.state.currEnemy === PigBankz) {
             enemyName = "PigBankz"
-        }else if(this.state.currEnemy === BullDawg){
+        } else if (this.state.currEnemy === BullDawg) {
             enemyName = "BullDawg"
-        }else if(this.state.currEnemy === GamBot){
+        } else if (this.state.currEnemy === GamBot) {
             enemyName = "GamBot"
-        }else if(this.state.currEnemy === LoanShark){
+        } else if (this.state.currEnemy === LoanShark) {
             enemyName = "LoanShark"
-        }else if(this.state.currEnemy === Vector){
+        } else if (this.state.currEnemy === Vector) {
             enemyName = "Vector"
         }
         let newHighScore = this.numberWithCommas(this.state.highScore)
@@ -327,7 +419,7 @@ class Game extends Component {
         return (
             <div>
                 <SlotsHolder
-                    mute = {this.state.mute}
+                    mute={this.state.mute}
                     highScore={newHighScore}
                     credits={newCredits}
                     spin={this.state.spin}
@@ -354,17 +446,17 @@ class Game extends Component {
                     currLvl={this.state.currLevel}
                     rqScore={newRqScore} />
 
-                <Profiles 
-                playerImg={this.state.currPlayer} 
-                playerName = {playerName} 
-                enemyImg={this.state.currEnemy}
-                enemyName = {enemyName}
-                handleSwitch = {this.handlePlayerSwitch} />
+                <Profiles
+                    playerImg={this.state.currPlayer}
+                    playerName={playerName}
+                    enemyImg={this.state.currEnemy}
+                    enemyName={enemyName}
+                    handleSwitch={this.handlePlayerSwitch} />
 
-                {(this.state.gameOver ? <HighScoreSubmitter mute ={this.state.mute} highScore={this.state.highScore} reset={this.handleGameReset} /> : null)}
+                {(this.state.gameOver ? <HighScoreSubmitter mute={this.state.mute} highScore={this.state.highScore} reset={this.handleGameReset} /> : null)}
                 {(this.state.scoreTable ? <ScoreTable showTable={this.showTable} /> : null)}
-                {(!this.state.mute ? <button className="muteBtn" type="button" onClick={this.handleMute}>&#128266;</button>:
-                <button className="muteBtn" type="button" onClick={this.handleMute}>&#128264;</button>)}
+                {(!this.state.mute ? <button className="muteBtn" type="button" onClick={this.handleMute}>&#128266;</button> :
+                    <button className="muteBtn" type="button" onClick={this.handleMute}>&#128264;</button>)}
             </div>
         )
     }
