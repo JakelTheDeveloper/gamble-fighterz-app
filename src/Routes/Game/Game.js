@@ -16,6 +16,7 @@ import './Game.css'
 import SoundOBJ from '../../Helpers/AudioHelper'
 import ScoreTable from '../../Components/ScoreTable/ScoreTable'
 import TokenService from '../../services/token-service'
+import Confirm from '../../Components/Confirm/Confirm'
 
 class Game extends Component {
     constructor(props) {
@@ -43,12 +44,18 @@ class Game extends Component {
             scoreTable: false,
             gameOver: false,
             mute: true,
-            error: null
+            error: null,
+            confirm: null
         }
     }
     clearError = () => {
         this.setState({
             error: null
+        })
+    }
+    clearConfirm = () => {
+        this.setState({
+            confirm: null
         })
     }
     handleMute = () => {
@@ -363,10 +370,15 @@ class Game extends Component {
             return 0
         }
     }
+    handleConfirm=()=>{
+        let {confirm} = this.state
+        this.setState({confirm:confirm = "Are You Sure?"})
+        this.handleParams(confirm)
+    }
     handleGameEnd=()=>{
-        let {credits,bet} = this.state
-        this.setState({credits:credits = 0,bet:bet = 0})
-        this.handleParams(credits,bet)
+        let {credits,bet,confirm} = this.state
+        this.setState({credits:credits = 0,bet:bet = 0,confirm:confirm = null})
+        this.handleParams(credits,bet,confirm)
     }
     handleGameReset = () => {
         let { highScore, credits, currScore, currLevel, rqScore, currEnemy, gameOver } = this.state
@@ -396,7 +408,6 @@ class Game extends Component {
             TokenService.saveData(storageData)
             console.log(localStorage.player)
         }
-      
     }
     render() {
         let playerName
@@ -441,11 +452,14 @@ class Game extends Component {
                     gen3={this.state.g3} />
 
                 {(this.state.error ? <Error message={this.state.error} clearError={this.clearError} /> : null)}
+                {(this.state.confirm ? <Confirm message={this.state.confirm} clearConfirm={this.clearConfirm}
+                endGame = {this.handleGameEnd} /> : null)}
 
                 <Controller
                     handleBet={this.handleBet}
                     handleSpin={this.handleSpin}
                     showTable={this.showTable}
+                    handleConfirm={this.handleConfirm}
                     endGame = {this.handleGameEnd}
                     credits={this.state.credits}
                     bet={this.state.bet}

@@ -30,7 +30,7 @@ class Controller extends Component {
                 <div className="controls">
                     <div className="optionsDiv">
                         <button className="scoreTableBtn" type="button" onClick={this.props.showTable}>Score Table</button>
-                        <button className="withdrawBtn" type="button" onClick={this.props.endGame}>Withdraw</button>
+                        <button className="withdrawBtn" type="button" onClick={this.props.handleConfirm}>Withdraw</button>
                     </div>
                     <div className="betDiv">
                         <button className={betBtnClass} type="button" onClick={() => { this.props.handleBet(1) }}>Bet 1</button>
