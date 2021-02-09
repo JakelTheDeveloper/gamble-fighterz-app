@@ -76,7 +76,7 @@ class HighScoreSubmitter extends Component {
                 </div>
                 <div className="submitBtnDiv">
                     <button className="submitBtn" type="submit">Submit</button>
-                    <button className="spinBtnA" type="button" onClick={this.props.reset}>Play Again</button>
+                    <button className="submitBtn" type="button" onClick={this.props.reset}>Play Again</button>
                 </div>
                 </form>
             </div>

@@ -75,13 +75,33 @@
         text-align: right;
         display: inline-flex;
     }
+    .optionsDiv{
+        display: flex;
+        flex-direction: column;
+    }
     .betDiv {
         text-align: left;
+        margin-top: 1%;
         display: inline-flex;
     }
     .muteDiv {
         text-align: left;
         margin-left: -5%;
+    }
+    .withdrawBtn {
+        border: solid 2px rgb(11, 87, 97);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        font-family: 'Turret Road', cursive;
+        font-size: 14px;
+        font-weight: 600;
+        background: linear-gradient(to bottom, rgb(95, 197, 228) 0, rgb(19, 127, 141));
+        color: rgb(0, 0, 0);
+        width: 80px;
+        height: 30px;
+        margin-left: -10%;
+        cursor: pointer;
     }
     .scoreTableBtn {
         border: solid 2px rgb(11, 87, 97);
@@ -119,7 +139,7 @@
     }
     .betBtnA {
         border: solid 2px rgb(0, 0, 0);
-        margin-top: 10px;
+        margin-top: 10%;
         margin-bottom: 10px;
         margin-right: 10px;
         border-radius: 5px;
@@ -134,7 +154,7 @@
     }
     .betBtnI {
         border: solid 2px rgb(1, 2, 1);
-        margin-top: 10px;
+        margin-top: 10%;
         margin-bottom: 10px;
         margin-right: 10px;
         border-radius: 5px;
@@ -150,7 +170,7 @@
     
     .spinBtnA {
         border: solid 2px rgb(11, 97, 57);
-        margin-top: 10px;
+        margin-top: 45%;
         margin-bottom: 10px;
         border-radius: 10px;
         font-family: 'Turret Road', cursive;
@@ -164,11 +184,12 @@
     }
     .spinBtnI {
         border: solid 2px rgb(5, 39, 23);
-        margin-top: 10px;
+        margin-top: 45%;
         margin-bottom: 10px;
         border-radius: 10px;
         font-family: 'Turret Road', cursive;
         font-size: 14px;
+        
         font-weight: 600;
         background-color:  rgb(5, 39, 23);
         color: rgb(0, 0, 0);

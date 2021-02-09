@@ -41,11 +41,14 @@ when credits reach 0. Choose to play again and or submit your score!
 
 #### Version
 
--1.0.0
+-0.9.3
+
 
 ## How To Play
 
 ![Instructions](/src/images/InstructionGuide.png)
+
+* Withdraw button added. Pressing this button allows you to end the game and submit your highscore.
 
 0. Mute - Default (May have to keep muted on some mobile device browsers.)
 1. Slot Holder for Icon 1.

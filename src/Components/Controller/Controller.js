@@ -2,6 +2,13 @@ import React, { Component } from 'react'
 import './ControllerM.css'
 import './ControllerC.css'
 class Controller extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            confirm:null
+        }
+    }
+
     render() {
         let bet = this.props.bet
         let spin = this.props.spin
@@ -21,8 +28,9 @@ class Controller extends Component {
         return (
             <div>
                 <div className="controls">
-                    <div className="betDiv">
-                        <button className="scoreTableBtn" type="button" onClick={this.props.showTable}>Score Table </button>
+                    <div className="optionsDiv">
+                        <button className="scoreTableBtn" type="button" onClick={this.props.showTable}>Score Table</button>
+                        <button className="withdrawBtn" type="button" onClick={this.props.endGame}>Withdraw</button>
                     </div>
                     <div className="betDiv">
                         <button className={betBtnClass} type="button" onClick={() => { this.props.handleBet(1) }}>Bet 1</button>

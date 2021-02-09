@@ -76,7 +76,6 @@ class Game extends Component {
             ptsToAdd, multiplier, currPlayer, currEnemy)
     }
     componentDidMount() {
-        console.log(localStorage)
         let { rqScore, currEnemy, generate1, generate2, generate3,
         } = this.state
 
@@ -137,20 +136,23 @@ class Game extends Component {
             storageData.level = 5
             TokenService.saveData(storageData)
         } else if (this.state.currLevel === 6 && rqScore === 75000) {
-            this.setState({ rqScore: rqScore = 1000000, currEnemy: currEnemy = Vector })
-            storageData.rqScore = 1000000
+            this.setState({ rqScore: rqScore = 100000, currEnemy: currEnemy = Vector })
+            storageData.rqScore = 100000
             storageData.enemy = Vector
             storageData.level = 6
             TokenService.saveData(storageData)
-        }
+        } 
         this.handleParams(currEnemy)
         let newHighAdd = currScore
         let credBonus = this.calculateCredBonus()
-        if (currScore >= rqScore && this.state.ptsToAdd === 0) {
+        if (currScore >= rqScore && this.state.ptsToAdd === 0 && currLevel < 6) {
             this.setState({ currScore: currScore = 0, currLevel: currLevel += 1, highScore: highScore += newHighAdd, credits: credits += credBonus })
             if (!this.state.mute) {
                 SoundOBJ.nextLevelSFX.play()
             }
+        }else
+        if(currScore >= rqScore && this.state.ptsToAdd === 0 && currLevel === 6){
+            this.setState({highScore:highScore += newHighAdd,gameOver:gameOver = true})
         }
         if (credits === 0 && this.state.ptsToAdd === 0 && currScore < rqScore && bet === 0 && !spin && !gameOver) {
             this.setState({ highScore: highScore += newHighAdd, gameOver: gameOver = true })
@@ -361,6 +363,11 @@ class Game extends Component {
             return 0
         }
     }
+    handleGameEnd=()=>{
+        let {credits,bet} = this.state
+        this.setState({credits:credits = 0,bet:bet = 0})
+        this.handleParams(credits,bet)
+    }
     handleGameReset = () => {
         let { highScore, credits, currScore, currLevel, rqScore, currEnemy, gameOver } = this.state
         this.setState({
@@ -439,6 +446,7 @@ class Game extends Component {
                     handleBet={this.handleBet}
                     handleSpin={this.handleSpin}
                     showTable={this.showTable}
+                    endGame = {this.handleGameEnd}
                     credits={this.state.credits}
                     bet={this.state.bet}
                     spin={this.state.spin}
